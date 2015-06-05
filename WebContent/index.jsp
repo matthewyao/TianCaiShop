@@ -46,8 +46,105 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 </script>
 <div id="J_SiteNav" class="site-nav">
 <div id="J_SiteNavBd" class="site-nav-bd">
-<ul id="J_SiteNavBdL" class="site-nav-bd-l"><li id="J_LoginInfo" class="J_Menu menu login-info" data-fn-name="fn-login-info" data-spm="754894437"><div class="menu-hd"><a href="#" target="_top" class="login-info-nick"><%=session.getAttribute("username") %></a><span class="arrow-icon-wrapper"><span class="g-icon arrow-icon"></span></span></div><div class="menu-bd"><div class="menu-bd-panel"><a href="http://i.taobao.com/my_taobao.htm?ad_id=&am_id=&cm_id=&pm_id=1501036000a02c5c3739" target="_top" id="J_UserAvatar" class="user-avatar"><img src="./images/index/s.gif" width="80" height="80" alt="tb7009456_66的头像"></a><div class="user-info"><p class="user-operate"><a href="http://member1.taobao.com/member/fresh/account_security.htm" target="_top">账号管理</a><span class="site-nav-pipe">|</span><a href="http://login.taobao.com/member/logout.jhtml?f=top&out=true&redirectURL=http%3A%2F%2Fwww.taobao.com%2Fmarket%2Fnanzhuang%2Findex.php%3Fspm%3D1.7274553.200.2.Dq0ynd" target="_top">退出</a></p><p id="J_Global_UserVipLevel"></p><p><a href="http://vip.taobao.com/privilege/privilege_detail.htm" target="_top"><strong id="J_UserPrivilegeCount">查看我的会员特权</strong></a></p></div><div id="J_UserPrivilegeTip" class="user-privilege-tip"></div><div id="J_UserMedal" class="user-medal site-nav-loading"><div class="user-medal-bd"><div id="J_UserMedalCont" class="user-medal-cont"></div></div><a href="javascript:;" target="_top" id="J_ArrowL" class="medal-arrow arrow-l">&lt;</a><a href="javascript:;" target="_top" id="J_ArrowR" class="medal-arrow arrow-r">&gt;</a></div></div></div></li><li id="J_Tmsg" class="tmsg" data-spm="1997563201"><div class="J_Menu menu" data-fn-name="fn-tmsg"><div class="menu-hd J_Tmsg_Basic tmsg_basic"><span class="J_Tmsg_Logo tmsg_logo_area tmsg_logo_active" style="zoom:1;"><span class="J_Tmsg_Logo_Loading tmsg_logo_loading" style="display: none;"></span> <span class="J_Tmsg_Logo_Icon tmsg_logo_icon g-icon"></span> <span class="J_Tmsg_Logo_Text tmsg_logo_text">消息</span> <span class="J_Tmsg_Logo_Unread tmsg_logo_unread">1</span></span> <span class="arrow-icon-wrapper"><span class="g-icon arrow-icon"></span></span></div><div class="menu-bd"><div class="J_Tmsg_Panel_Apps tmsg_panel_apps"><div class="J_Tmsg_Panel_Head tmsg_panel_head">   <h2 class="J_Tmsg_Panel_Title tmsg_panel_title">未读新消息</h2>   <a class="J_Tmsg_Button_ReadAll tmsg_button_read-all" data-tip="ignoreAll" title="忽略所有消息" href="http://www.taobao.com/market/nanzhuang/index.php?spm=1.7274553.200.2.Dq0ynd#">全部设为已读</a></div><div class="J_Tmsg_Panel_AppsBody tmsg_panel_body">   <img style="display:block;margin:30px auto" width="48" height="48" src="./images/index/T1HcvHXd4nXXb6ROYh-48-48.gif"></div><div class="J_Tmsg_Panel_Foot tmsg_panel_foot">   <a class="J_Tmsg_Button_Setting tmsg_button_setting" data-tips="setting" title="消息设置" href="http://www.taobao.com/market/nanzhuang/index.php?spm=1.7274553.200.2.Dq0ynd#">设置</a>   <a class="J_Tmsg_Button_Feedback tmsg_button_feedback" data-tips="feedback" title="意见反馈" href="http://ur.taobao.com/survey/view.htm?spm=1.6659421.0.0.Nmaw77&id=1990&scm=1229.325.1.1" target="_blank">反馈</a>   <span class="J_Tmsg_Button_CheckAll_Wrap tmsg_button_check-all_wrap">       <a class="J_Tmsg_Button_CheckAll tmsg_button_check-all" href="http://www.taobao.com/market/nanzhuang/index.php?spm=1.7274553.200.2.Dq0ynd#" target="_blank">查看全部</a>   </span></div></div></div></div><div class="J_Tmsg_Panels tmsg_panels"><div class="J_Tmsg_Panel_Detail tmsg_panel_detail"></div><div class="J_Tmsg_Panel_history tmsg_panel_history"></div><div class="J_Tmsg_Panel_Strong tmsg_panel_strong"></div><div class="J_Tmsg_Panel_Setting tmsg_panel_setting"></div></div></li><li class="menu mobile" data-spm="1997563273"><div class="menu-hd"><a href="http://www.taobao.com/m" target="_top">手机逛淘宝</a></div></li><li id="J_Weekend" class="menu weekend" data-spm="1996803849"></li></ul>
-<ul id="J_SiteNavBdR" class="site-nav-bd-r"><li class="menu home" data-spm="1581860521"><div class="menu-hd"><a href="http://www.taobao.com/" target="_top" class="h">天彩首页</a></div></li><li class="J_Menu menu my-taobao" data-spm="1997525045"><div class="menu-hd J_MenuMyTaobao"><a href="http://i.taobao.com/my_taobao.htm" target="_top">我的淘宝</a><span class="arrow-icon-wrapper"><span class="g-icon arrow-icon"></span></span></div><div class="menu-bd menu-list"><div class="menu-bd-panel"><a href="http://trade.taobao.com/trade/itemlist/list_bought_items.htm" target="_top">已买到的宝贝</a><a href="http://lu.taobao.com/newMyPath.htm" target="_top">我的足迹</a><a href="http://dongtai.taobao.com/hub/new_arrival.htm?scm=1046.1.7.1" target="_top">我的上新</a><a href="http://guang.taobao.com/?scm=2022.1.1.1" target="_top">爱逛街 <em class="J_GuangCount guang-count"></em></a><a href="http://daren.taobao.com/" target="_top">淘宝达人</a><a href="http://love.taobao.com/" target="_top">新欢</a></div></div></li><li id="J_MiniCart" class="J_Menu menu menu-empty mini-cart" data-fn-name="fn-mini-cart" data-spm="1997525049"><div class="menu-hd"><a href="http://cart.taobao.com/cart.htm?from=mini&ad_id=&am_id=&cm_id=&pm_id=1501036000a02c5c3739" target="_top" id="mc-menu-hd"><span class="g-icon"></span><span>购物车</span></a><span class="arrow-icon-wrapper"><span class="g-icon arrow-icon"></span></span></div><div class="menu-bd"><div class="menu-bd-panel"></div></div></li><li class="J_Menu menu favorite" data-spm="1997525053"><div class="menu-hd"><a href="http://shoucang.taobao.com/shop_collect_list.htm" target="_top"><span class="g-icon"></span><span>收藏夹</span></a><span class="arrow-icon-wrapper"><span class="g-icon arrow-icon"></span></span></div><div class="menu-bd menu-list"><div class="menu-bd-panel"><a href="http://shoucang.taobao.com/item_collect.htm" target="_top">收藏的宝贝</a><a href="http://shoucang.taobao.com/shop_collect_list.htm" target="_top">收藏的店铺</a></div></div></li><li class="menu guide" data-spm="1997563209"><div class="menu-hd"><a href="http://list.taobao.com/browse/cat-0.htm?taobao_from=6" target="_top">商品分类</a></div></li><li class="site-nav-pipe">|</li><li class="J_Menu menu seller-center" data-spm="1997525073"><div class="menu-hd"><a href="http://mai.taobao.com/seller_admin.htm" target="_top">卖家中心</a><span class="arrow-icon-wrapper"><span class="g-icon arrow-icon"></span></span></div><div class="menu-bd menu-list"><div class="menu-bd-panel"><a href="http://mai.taobao.com/seller_admin.htm" target="_top">免费开店</a><a href="http://trade.taobao.com/trade/itemlist/list_sold_items.htm" target="_top">已卖出的宝贝</a><a href="http://sell.taobao.com/auction/goods/goods_on_sale.htm" target="_top">出售中的宝贝</a><a href="http://fuwu.taobao.com/?tracelog=tbdd" target="_top">卖家服务市场</a><a href="http://daxue.taobao.com/" target="_top">卖家培训中心</a></div></div></li><li class="menu service" data-spm="754895749"><div class="menu-hd"><a href="http://service.taobao.com/support/main/service_center.htm" target="_top">联系客服</a></div></li><li id="J_SiteMap" class="J_Menu menu site-map" data-fn-name="fn-site-map" data-spm="1997525077"><div class="menu-hd"><a href="http://www.taobao.com/sitemap.php?id=sitemap2" target="_top"><span class="g-icon"></span><span>网站导航</span></a><span class="arrow-icon-wrapper"><span class="g-icon arrow-icon"></span></span></div><div class="menu-bd"><div id="J_SiteMapBd" class="menu-bd-panel"></div></div></li></ul>
+<ul id="J_SiteNavBdL" class="site-nav-bd-l">
+<li id="J_LoginInfo" class="J_Menu menu login-info" data-fn-name="fn-login-info" data-spm="754894437">
+<div class="menu-hd">
+	<%
+			if(session.getAttribute("username") == null){%>
+				<a href="./login.jsp" target="_top" class="login-info-nick">请登录！</a><% 
+			} else {%>
+				<a href="#" target="_top" class="login-info-nick"><%=session.getAttribute("username") %></a><%
+			}
+	%>
+	<span class="arrow-icon-wrapper"><span class="g-icon arrow-icon">
+	</span>
+	</span>
+</div>
+<div class="menu-bd">
+<li id="J_Tmsg" class="tmsg" data-spm="1997563201">
+	<div class="J_Menu menu" data-fn-name="fn-tmsg">
+		<div class="menu-hd J_Tmsg_Basic tmsg_basic">
+			<span class="J_Tmsg_Logo tmsg_logo_area tmsg_logo_active" style="zoom:1;">
+				<span class="J_Tmsg_Logo_Loading tmsg_logo_loading" style="display: none;"></span> 
+				<span class="J_Tmsg_Logo_Icon tmsg_logo_icon g-icon"></span> 
+				<span class="J_Tmsg_Logo_Text tmsg_logo_text">消息</span> 
+				<span class="J_Tmsg_Logo_Unread tmsg_logo_unread">1</span>
+			</span>
+			 <span class="arrow-icon-wrapper">
+				 <span class="g-icon arrow-icon">
+				 </span>
+			 </span>
+		 </div>
+	 </div>
+ <div class="J_Tmsg_Panels tmsg_panels"><div class="J_Tmsg_Panel_Detail tmsg_panel_detail"></div>
+ <div class="J_Tmsg_Panel_history tmsg_panel_history"></div><div class="J_Tmsg_Panel_Strong tmsg_panel_strong"></div>
+ <div class="J_Tmsg_Panel_Setting tmsg_panel_setting"></div></div>
+ 
+ </li>
+ <li class="menu mobile" data-spm="1997563273">
+ <div class="menu-hd"></div>
+ </li>
+ <li id="J_Weekend" class="menu weekend" data-spm="1996803849">
+ </li>
+ </ul>
+
+<ul id="J_SiteNavBdR" class="site-nav-bd-r">
+<li class="menu home" data-spm="1581860521">
+<div class="menu-hd"><a href="./index.jsp" target="_top" class="h">天彩首页</a></div>
+</li>
+<li class="J_Menu menu my-taobao" data-spm="1997525045">
+<div class="menu-hd J_MenuMyTaobao"><a href="http://i.taobao.com/my_taobao.htm" target="_top">我的淘宝</a>
+<span class="arrow-icon-wrapper"><span class="g-icon arrow-icon"></span></span>
+</div>
+<div class="menu-bd menu-list"><div class="menu-bd-panel">
+<a href="http://trade.taobao.com/trade/itemlist/list_bought_items.htm" target="_top">已买到的宝贝</a>
+<a href="http://lu.taobao.com/newMyPath.htm" target="_top">我的足迹</a>
+<a href="http://dongtai.taobao.com/hub/new_arrival.htm?scm=1046.1.7.1" target="_top">我的上新</a>
+<a href="http://guang.taobao.com/?scm=2022.1.1.1" target="_top">爱逛街 <em class="J_GuangCount guang-count"></em></a>
+<a href="http://daren.taobao.com/" target="_top">淘宝达人</a><a href="http://love.taobao.com/" target="_top">新欢</a>
+</div>
+</div>
+</li>
+<li id="J_MiniCart" class="J_Menu menu menu-empty mini-cart" data-fn-name="fn-mini-cart" data-spm="1997525049">
+<div class="menu-hd"><a href="" target="_top" id="mc-menu-hd"><span class="g-icon"></span>
+<span>购物车</span></a><span class="arrow-icon-wrapper"><span class="g-icon arrow-icon"></span>
+</span>
+</div>
+<div class="menu-bd"><div class="menu-bd-panel"></div>
+</div></li><li class="J_Menu menu favorite" data-spm="1997525053">
+<div class="menu-hd"><a href="" target="_top"><span class="g-icon"></span>
+<span>收藏夹</span></a><span class="arrow-icon-wrapper"><span class="g-icon arrow-icon">
+</span>
+</span>
+</div>
+<div class="menu-bd menu-list"><div class="menu-bd-panel"><a href="" target="_top">收藏的宝贝</a>
+<a href="" target="_top">收藏的店铺</a>
+</div>
+</div>
+</li>
+<li class="menu guide" data-spm="1997563209"><div class="menu-hd">
+<a href="http://list.taobao.com/browse/cat-0.htm?taobao_from=6" target="_top">商品分类</a></div></li>
+<li class="site-nav-pipe">|</li><li class="J_Menu menu seller-center" data-spm="1997525073">
+<div class="menu-hd"><a href="http://mai.taobao.com/seller_admin.htm" target="_top">卖家中心</a><span class="arrow-icon-wrapper">
+<span class="g-icon arrow-icon"></span></span></div><div class="menu-bd menu-list"><div class="menu-bd-panel">
+<a href="http://mai.taobao.com/seller_admin.htm" target="_top">免费开店</a>
+<a href="http://trade.taobao.com/trade/itemlist/list_sold_items.htm" target="_top">已卖出的宝贝</a>
+<a href="http://sell.taobao.com/auction/goods/goods_on_sale.htm" target="_top">出售中的宝贝</a>
+<a href="http://fuwu.taobao.com/?tracelog=tbdd" target="_top">卖家服务市场</a>
+<a href="http://daxue.taobao.com/" target="_top">卖家培训中心</a></div></div>
+</li>
+<li class="menu service" data-spm="754895749">
+<div class="menu-hd">
+<a href="http://service.taobao.com/support/main/service_center.htm" target="_top">联系客服</a></div>
+</li>
+<li id="J_SiteMap" class="J_Menu menu site-map" data-fn-name="fn-site-map" data-spm="1997525077">
+<div class="menu-hd"><a href="http://www.taobao.com/sitemap.php?id=sitemap2" target="_top">
+<span class="g-icon"></span><span>网站导航</span></a><span class="arrow-icon-wrapper">
+<span class="g-icon arrow-icon"></span></span></div><div class="menu-bd"><div id="J_SiteMapBd" class="menu-bd-panel">
+</div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="skin-default" data-name="sm-nav-2014" data-skin="default" data-guid="1399376595986" id="guid-1399376595986" data-version="85" data-type="3"><div class="module" data-spm="a214d6t">
