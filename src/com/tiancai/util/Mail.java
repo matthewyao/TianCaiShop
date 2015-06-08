@@ -1,4 +1,5 @@
 package com.tiancai.util;
+
 import java.util.Properties;
 import javax.mail.Address;
 import javax.mail.BodyPart;
@@ -167,4 +168,29 @@ public class Mail {
 			return false;
 		return true;
 	}
+	
+	/*调用sendMail方法完成发送*/
+	public static boolean sendMail(String to,	String subject, String content) {
+		String smtp = "smtp.163.com";
+		String from = "m15527009456@163.com";
+		String copyto = "864749494@qq.com";
+		String username = "m15527009456@163.com";
+		String password = "yk19920320";
+		Mail theMail = new Mail(smtp);
+		theMail.setNeedAuth(true); // 验证
+		if (!theMail.setSubject(subject))
+			return false;
+		if (!theMail.setBody(content))
+			return false;
+		if (!theMail.setTo(to))
+			return false;
+		if (!theMail.setCopyTo(copyto))
+			return false;
+		if (!theMail.setFrom(from))
+			return false;
+		theMail.setNamePass(username, password);
+		if (!theMail.sendOut())
+			return false;
+		return true;
+	}	
 }

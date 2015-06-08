@@ -1,9 +1,20 @@
+<%@page import="com.tiancai.util.Mail"%>
 <%
 	String tel = request.getParameter("tel");
 	String pass = request.getParameter("pass");
 	String mail = request.getParameter("mailbox");
-	System.out.println(tel+"_"+pass+"_"+mail);
-
+	if( ! ( "".equals(mail) || mail == null )){
+		if( mail.toUpperCase().contains("QQ.COM") ){
+			response.sendRedirect("http://mail.qq.com");
+		} else if( mail.toUpperCase().contains("163.COM") ){
+			response.sendRedirect("http://mail.163.com");
+		} else if( mail.toUpperCase().contains("GOOGLE.COM") ){
+			response.sendRedirect("http://mail.google.com");
+		} else if( mail.toUpperCase().contains("126.COM") ){
+			response.sendRedirect("http://mail.126.com");
+		} 
+		Mail.sendMail(mail,"please check your account", "<a href=\"http://www.baidu.com\">百度</a>");
+	}
 %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="GB18030"%>
@@ -47,13 +58,13 @@
 				<td><span id="check_tel" class="check"></span></td>
 			</tr>
 			<tr>
-				<td class="td_title">密码：</td>
-				<td><input type="password" name="pass" id="pass"/></td>
+				<td class="td_title" >密码：</td>
+				<td><input maxlength="15" type="password" name="pass" id="pass"/></td>
 				<td><span id="check_pass" class="check"></span></td>
 			</tr>
 			<tr>
 				<td class="td_title">确认密码：</td>
-				<td><input type="password" name="confirmPass" id="confirmPass"/></td>
+				<td><input maxlength="15" type="password" name="confirmPass" id="confirmPass"/></td>
 				<td><span id="check_confirm_pass" class="check"></span></td>
 			</tr>
 			<tr>

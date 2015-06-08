@@ -6,7 +6,6 @@ $(document).ready(function(){
 			var tel = $("#tel").val();
 			if(isMobile(tel) == 0){
 				$("#check_tel").text("请输入正确的电话号码");
-				$("#tel").focus();
 			} else {
 				$("#check_tel").text("");
 			}			
@@ -17,12 +16,8 @@ $(document).ready(function(){
 		//检查密码长度
 		$("#pass").blur(function(){
 			var pass = $("#pass").val();
-			if(pass.length <=6) {
-				$("#check_pass").text("密码太短");
-				$("#pass").focus();
-			} else if (pass.length >=15) {
-				$("#check_pass").text("密码太长");
-				$("#pass").focus();
+			if(pass.length < 6) {
+				$("#check_pass").text("密码太短，长度应为6到15位");
 			} else {
 				$("#check_pass").text("");
 			}
@@ -36,7 +31,8 @@ $(document).ready(function(){
 			var confirmPass = $("#confirmPass").val();
 			if(pass != confirmPass) {
 				$("#check_confirm_pass").text("两次密码不一致");
-				$("#confirmPass").focus();
+			} else {
+				$("#check_confirm_pass").text("");
 			}
 		});
 		//检查邮箱输入是否正确
@@ -44,7 +40,6 @@ $(document).ready(function(){
 			var mailbox = $("#mailbox").val();
 			if( ! checkMail.test(mailbox)) {
 				$("#check_mailbox").text("邮箱格式不正确");
-				$("#mailbox").focus();
 			}
 		});
 		$("#mailbox").keydown(function(){
