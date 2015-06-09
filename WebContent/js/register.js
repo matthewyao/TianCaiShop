@@ -13,7 +13,7 @@ $(document).ready(function(){
 		$("#tel").keydown(function(){
 			$("#check_tel").text("");
 		});
-		//检查密码长度
+		//检查密码长度,6到15位
 		$("#pass").blur(function(){
 			var pass = $("#pass").val();
 			if(pass.length < 6) {

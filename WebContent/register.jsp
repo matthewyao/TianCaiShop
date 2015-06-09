@@ -12,6 +12,8 @@
 			response.sendRedirect("http://mail.google.com");
 		} else if( mail.toUpperCase().contains("126.COM") ){
 			response.sendRedirect("http://mail.126.com");
+		}  else if( mail.toUpperCase().contains("HOTMAIL.COM") ){
+		response.sendRedirect("http://www.hotmail.com");
 		} 
 		Mail.sendMail(mail,"please check your account", "<a href=\"http://www.baidu.com\">°Ù¶È</a>");
 	}
