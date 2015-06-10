@@ -21,7 +21,7 @@
 			"VALUES ('"+tel+"','"+pass+"','"+tel+"','"+mail+"')";
 	boolean result = JdbcTemplate.excute(sql);
 	if(result){
-		Mail.sendMail(mail,"please check your account", "<a href=\"http://www.baidu.com\">百度</a>");
+		Mail.sendMail(mail,"please check your account", "<a href=\"http://localhost:8888/TianCaiShp/valid.jsp?tel="+tel+"\">百度</a>");
 	} else {
 		response.getWriter().write("<script type=\"text/javascript\">alert('注册失败，请联系管理员')</script>");
 	}
