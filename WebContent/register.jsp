@@ -1,12 +1,15 @@
+<%@page import="java.util.Date"%>
 <%@page import="com.tiancai.util.JdbcTemplate"%>
 <%@page import="com.tiancai.util.Mail"%>
 <%
 	String tel = request.getParameter("tel");
 	String pass = request.getParameter("pass");
 	String mail = request.getParameter("mailbox");
+	
+	//非第一次进入
 	if( ! ( "".equals(mail) || mail == null )){
 		if( mail.toUpperCase().contains("QQ.COM") ){
-			response.sendRedirect("http://mail.qq.com");
+			//response.sendRedirect("http://mail.qq.com");
 		} else if( mail.toUpperCase().contains("163.COM") ){
 			response.sendRedirect("http://mail.163.com");
 		} else if( mail.toUpperCase().contains("GOOGLE.COM") ){
@@ -16,15 +19,20 @@
 		}  else if( mail.toUpperCase().contains("HOTMAIL.COM") ){
 		response.sendRedirect("http://www.hotmail.com");
 		} 
-	}
-	String sql = "INSERT INTO `tiancai`.`user`(`username`,`password`,`nickname`,`email`) " +
-			"VALUES ('"+tel+"','"+pass+"','"+tel+"','"+mail+"')";
-	boolean result = JdbcTemplate.excute(sql);
-	if(result){
-		Mail.sendMail(mail,"please check your account", "<a href=\"http://localhost:8888/TianCaiShp/valid.jsp?tel="+tel+"\">百度</a>");
-	} else {
-		response.getWriter().write("<script type=\"text/javascript\">alert('注册失败，请联系管理员')</script>");
-	}
+		String checkSql = "select username from user where username='" + tel +"'";
+		String user = JdbcTemplate.queryForString(checkSql); 
+		if( (user.equals("") || user == null) ){
+			String sql = "INSERT INTO `tiancai`.`user`(`username`,`password`,`nickname`,`email`) " +
+					"VALUES ('"+tel+"','"+pass+"','"+tel+"','"+mail+"')";
+			JdbcTemplate.excute(sql);
+			System.out.println(">>>>>>>>>>start to send mail to :"+mail + " At " + new Date().toString() );
+			Mail.sendMail(mail,"please check your account", "感谢注册天彩服装超市会员，我们将竭诚为您服务<br/><a href=\"http://localhost:8888/TianCaiShop/valid.jsp?tel='"+tel+"'\">点我验证账户！</a>");
+			System.out.println(">>>>>>>>>>send mail end At " + new Date().toString() );
+		} else {
+			//用户已经注册
+			response.getWriter().write("<script>alert('用户名已被占用！请更换用户名重试')<script>");
+		}
+	}	
 %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="GB18030"%>
