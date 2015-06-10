@@ -1,3 +1,4 @@
+<%@page import="com.tiancai.util.JdbcTemplate"%>
 <%@page import="com.tiancai.util.Mail"%>
 <%
 	String tel = request.getParameter("tel");
@@ -15,7 +16,14 @@
 		}  else if( mail.toUpperCase().contains("HOTMAIL.COM") ){
 		response.sendRedirect("http://www.hotmail.com");
 		} 
+	}
+	String sql = "INSERT INTO `tiancai`.`user`(`username`,`password`,`nickname`,`email`) " +
+			"VALUES ('"+tel+"','"+pass+"','"+tel+"','"+mail+"')";
+	boolean result = JdbcTemplate.excute(sql);
+	if(result){
 		Mail.sendMail(mail,"please check your account", "<a href=\"http://www.baidu.com\">百度</a>");
+	} else {
+		response.getWriter().write("<script type=\"text/javascript\">alert('注册失败，请联系管理员')</script>");
 	}
 %>
 <%@ page language="java" contentType="text/html; charset=utf-8"

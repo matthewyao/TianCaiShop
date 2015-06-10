@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.eclipse.jdt.internal.compiler.ast.ThisReference;
+
 public class JdbcTemplate {
 	
 	private static Connection conn = DBConnector.getConnection();
@@ -50,6 +52,20 @@ public class JdbcTemplate {
 	 * */
 	public static ResultSet excuteQuery(String sql){
 		return DBConnector.executeQuery(getStatement(conn), sql);
+	}
+	
+	/*
+	 * Ö´ÐÐMMDÓï¾ä
+	 * */
+	public static boolean excute(String sql){
+		boolean result = false;
+		try {
+			result = getStatement(conn).execute(sql);
+		} catch (SQLException e) {
+			System.out.println(">>>>>>>>>excute query failed,sql is :" + sql);
+			e.printStackTrace();
+		}
+		return result;
 	}
 	
 	private static Statement getStatement(Connection conn){
