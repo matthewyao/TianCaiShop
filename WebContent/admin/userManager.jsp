@@ -1,3 +1,22 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.tiancai.bean.User"%>
+<%@page import="java.util.List"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.tiancai.util.JdbcTemplate"%>
+<%@page import="com.tiancai.util.DBConnector"%>
+<%
+	String sql = "select * from user";
+	ResultSet rs = JdbcTemplate.excuteQuery(sql);
+	List<User> userList = new ArrayList<User>();
+	while(rs.next()) {
+		User u = new User();
+		u.setUsername(rs.getString("username"));
+		u.setEmail(rs.getString("email"));
+		u.setNickname(rs.getString("nickname"));
+		u.setValid(rs.getInt("valid"));
+		userList.add(u);
+	}
+%>
 <%@ page language="java" contentType="text/html; charset=GB18030"
     pageEncoding="GB18030"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -141,55 +160,34 @@
               <table class="table table-bordered table-hover tablesorter">
                 <thead>
                   <tr>
-                    <th>Page <i class="fa fa-sort"></i></th>
-                    <th>Visits <i class="fa fa-sort"></i></th>
-                    <th>% New Visits <i class="fa fa-sort"></i></th>
-                    <th>Revenue <i class="fa fa-sort"></i></th>
+                    <th>用户名 <i class="fa fa-sort"></i></th>
+                    <th>昵称<i class="fa fa-sort"></i></th>
+                    <th>邮箱 <i class="fa fa-sort"></i></th>
+                    <th>是否已邮箱验证<i class="fa fa-sort"></i></th>
+                    <th>操作<i class="fa fa-sort"></i></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>/index.html</td>
-                    <td>1265</td>
-                    <td>32.3%</td>
-                    <td>$321.33</td>
-                  </tr>
-                  <tr>
-                    <td>/about.html</td>
-                    <td>261</td>
-                    <td>33.3%</td>
-                    <td>$234.12</td>
-                  </tr>
-                  <tr>
-                    <td>/sales.html</td>
-                    <td>665</td>
-                    <td>21.3%</td>
-                    <td>$16.34</td>
-                  </tr>
-                  <tr>
-                    <td>/blog.html</td>
-                    <td>9516</td>
-                    <td>89.3%</td>
-                    <td>$1644.43</td>
-                  </tr>
-                  <tr>
-                    <td>/404.html</td>
-                    <td>23</td>
-                    <td>34.3%</td>
-                    <td>$23.52</td>
-                  </tr>
-                  <tr>
-                    <td>/services.html</td>
-                    <td>421</td>
-                    <td>60.3%</td>
-                    <td>$724.32</td>
-                  </tr>
-                  <tr>
-                    <td>/blog/post.html</td>
-                    <td>1233</td>
-                    <td>93.2%</td>
-                    <td>$126.34</td>
-                  </tr>
+                  <%
+                  	for(User u : userList){
+                  		%>
+                  			<tr>
+                  				<td><%=u.getUsername() %></td>
+                  				<td><%=u.getNickname() %></td>
+                  				<td><%=u.getEmail() %></td>
+                  				<td><span><% if(u.getValid() == 1){
+                  					%><font color="green">已验证</font><%
+                  				} else {
+                  					%><font color="red">未验证</font><%
+                  				} %></span></td>
+                  				<td>
+                  					<a href="#">封禁</a>
+                  					<a href="#">删除</a>
+                  				</td>
+                  			</tr>
+                  		<% 
+                  	}
+                  %>
                 </tbody>
               </table>
             </div>
