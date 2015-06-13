@@ -5,6 +5,7 @@ public class User {
 	private String nickname;
 	private String email;
 	private int valid;
+	private int disabled;
 	
 	public String getUsername() {
 		return username;
@@ -29,6 +30,12 @@ public class User {
 	}
 	public void setValid(int valid) {
 		this.valid = valid;
+	}
+	public int getDisabled() {
+		return disabled;
+	}
+	public void setDisabled(int disabled) {
+		this.disabled = disabled;
 	}
 	
 	

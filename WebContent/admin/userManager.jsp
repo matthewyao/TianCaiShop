@@ -14,6 +14,7 @@
 		u.setEmail(rs.getString("email"));
 		u.setNickname(rs.getString("nickname"));
 		u.setValid(rs.getInt("valid"));
+		u.setDisabled(rs.getInt("disabled"));
 		userList.add(u);
 	}
 %>
@@ -175,11 +176,24 @@
                   				<td><%=u.getUsername() %></td>
                   				<td><%=u.getNickname() %></td>
                   				<td><%=u.getEmail() %></td>
-                  				<td><span><% if(u.getValid() == 1){
-                  					%><font color="green">已验证</font><%
-                  				} else {
-                  					%><font color="red">未验证</font><%
-                  				} %></span></td>
+                  				<td>
+                  					<span>
+                  						<% if(u.getDisabled() == 0) { %>
+                  							<font color="green">未被禁</font>
+                  						<% } else { %>
+                  							<font color="red">已被禁</font>
+                  						<% } %>
+                  					</span>
+                  				</td>
+                  				<td>
+                  					<span>
+                  						<% if(u.getValid() == 1) { %>
+                  							<font color="green">已验证</font>
+                  						<% } else { %>
+                  							<font color="red">未验证</font>
+                  						<% } %>
+                  					</span>
+                  				</td>
                   				<td>
                   					<a href="./disableUser.jsp?username=<%=u.getUsername() %>">封禁</a>
                   					<a href="./deleteUser.jsp?username=<%=u.getUsername() %>">删除</a>
