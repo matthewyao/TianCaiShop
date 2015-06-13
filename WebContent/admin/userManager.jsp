@@ -195,8 +195,12 @@
                   					</span>
                   				</td>
                   				<td>
-                  					<a href="./disableUser.jsp?username=<%=u.getUsername() %>">·â½û</a>
-                  					<a href="./deleteUser.jsp?username=<%=u.getUsername() %>">É¾³ý</a>
+               						<% if(u.getValid() == 1) { %>
+               							<a href="./disableUser.jsp?type=0&username=<%=u.getUsername() %>">·â½û</a>
+               						<% } else { %>
+               							<a href="./disableUser.jsp?type=1&username=<%=u.getUsername() %>">½â½û</a>
+               						<% } %>                  					
+               						<a href="./deleteUser.jsp?username=<%=u.getUsername() %>">É¾³ý</a>
                   				</td>
                   			</tr>
                   		<% 

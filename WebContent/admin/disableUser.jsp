@@ -1,7 +1,8 @@
 <%@page import="com.tiancai.util.JdbcTemplate"%>
 <%
 	String username = request.getParameter("username");
-	String sql = "UPDATE `user` SET disabled=1 WHERE username='"+username+"'";
+	int type = Integer.parseInt(request.getParameter("type"));
+	String sql = "UPDATE `user` SET disabled="+type+" WHERE username='"+username+"'";
 	JdbcTemplate.excute(sql);
 	response.sendRedirect("./userManager.jsp");
 %>
