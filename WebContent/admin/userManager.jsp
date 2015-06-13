@@ -14,13 +14,9 @@
 	//获取用户个数
 	String numSql = "select count(*) from user";
 	int userNum = JdbcTemplate.queryForInt(numSql);
-	//首页默认展示
-	/*
-	select sql is:select * from user limit 0,2
-select sql is:select * from user limit 3,5
-select sql is:select * from user limit 6,8
-select sql is:select * from user limit 9,11
-	*/
+	userNum = userNum % 3 == 0 && userNum != 0 ? userNum-- : userNum ;
+	int totalPageNum = userNum / pageUserNum + 1;
+	
 	String sql = "select * from user limit " + startNo + "," + pageUserNum;
 System.out.println("select sql is:" + sql);
 	ResultSet rs = JdbcTemplate.excuteQuery(sql);
@@ -230,18 +226,20 @@ System.out.println("select sql is:" + sql);
             </div>
           </div>
           
-          <div class="bs-example">
+          <!-- 用户分页 -->
+          <div class="col-lg-12">
+          	<div class="bs-example">
               <ul class="pagination">
-                <li class="disabled"><a href="#">«</a></li>
+                <li <% if ( pageNum == 1 ) { %>class="disabled" <%}%>><a href="userManager.jsp?pageNum=<%=pageNum - 1%>">«</a></li>
                 <li class="active"><a href="userManager.jsp?pageNum=1">1</a></li>
                 <li><a href="userManager.jsp?pageNum=2">2</a></li>
                 <li><a href="userManager.jsp?pageNum=3">3</a></li>
                 <li><a href="userManager.jsp?pageNum=4">4</a></li>
-                <li><a href="userManager.jsp?pageNum=5">5</a></li>
-                <li><a href="userManager.jsp?pageNum=<%=pageNum+1%>">»</a></li>
+                <li><a href="userManager.jsp?pageNum=5">5</a></li>                
+                <li <% if ( pageNum == totalPageNum ) { %>class="disabled" <%}%>><a href="userManager.jsp?pageNum=<%=pageNum+1%>">»</a></li>
               </ul>             
             </div>
-       
+          </div>       
          
         </div><!-- /.row -->
 
