@@ -1,5 +1,5 @@
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.tiancai.bean.User"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.tiancai.util.JdbcTemplate"%>
@@ -181,7 +181,7 @@
                   					%><font color="red">Î´ÑéÖ¤</font><%
                   				} %></span></td>
                   				<td>
-                  					<a href="#">·â½û</a>
+                  					<a href="./feng.jsp">·â½û</a>
                   					<a href="#">É¾³ý</a>
                   				</td>
                   			</tr>
