@@ -3,7 +3,7 @@
 	String username = request.getParameter("username");
 	String sql = "DELETE FROM `user` WHERE username='"+username+"'";
 	JdbcTemplate.excute(sql);
-	response.sendRedirect("./userManager.jsp");
+	response.sendRedirect("./userManager.jsp?pageNum=0");
 %>
 <%@ page language="java" contentType="text/html; charset=GB18030"
     pageEncoding="GB18030"%>

@@ -1,3 +1,4 @@
+<%@page import="com.tiancai.util.Constant"%>
 <%@page import="com.tiancai.bean.User"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -5,7 +6,15 @@
 <%@page import="com.tiancai.util.JdbcTemplate"%>
 <%@page import="com.tiancai.util.DBConnector"%>
 <%
-	String sql = "select * from user";
+	int pageUserNum = Constant.USER_PAGE_SHOW_NUM;
+	int pageNum = Integer.parseInt(request.getParameter("pageNum"));
+	int lowNum = pageNum * pageUserNum;
+	int highNum = ( pageNum + 1 ) * pageUserNum -1;
+	//获取用户个数
+	String numSql = "select count(*) from user";
+	int userNum = JdbcTemplate.queryForInt(numSql);
+	//首页默认展示
+	String sql = "select * from user limit " + lowNum + "," + highNum;
 	ResultSet rs = JdbcTemplate.excuteQuery(sql);
 	List<User> userList = new ArrayList<User>();
 	while(rs.next()) {
@@ -58,6 +67,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
             <li><a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li><a href="userManager.jsp?pageNum=0"><i class="fa fa-bar-chart-o"></i> 用户管理</a></li>
             <li><a href="charts.html"><i class="fa fa-bar-chart-o"></i> Charts</a></li>
             <li class="active"><a href="tables.html"><i class="fa fa-table"></i> Tables</a></li>
             <li><a href="forms.html"><i class="fa fa-edit"></i> Forms</a></li>

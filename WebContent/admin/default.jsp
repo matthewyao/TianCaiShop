@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
             <li class="active"><a href="default.jsp"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="userManager.jsp"><i class="fa fa-bar-chart-o"></i> 用户管理</a></li>
+            <li><a href="userManager.jsp?pageNum=0"><i class="fa fa-bar-chart-o"></i> 用户管理</a></li>
             <li><a href="charts.html"><i class="fa fa-bar-chart-o"></i> Charts</a></li>
             <li><a href="tables.html"><i class="fa fa-table"></i> Tables</a></li>
             <li><a href="forms.html"><i class="fa fa-edit"></i> Forms</a></li>
