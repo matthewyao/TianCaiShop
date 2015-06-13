@@ -10,8 +10,7 @@
 	//获取页数
 	int pageNum = Integer.parseInt(request.getParameter("pageNum"));
 	//获取起始数
-	int cursor = pageNum == 1 ? 0 : 1 ;
-	int startNo = ( pageNum - 1 ) * pageUserNum - cursor;
+	int startNo = ( pageNum - 1 ) * pageUserNum;
 	//获取用户个数
 	String numSql = "select count(*) from user";
 	int userNum = JdbcTemplate.queryForInt(numSql);
@@ -183,6 +182,7 @@ System.out.println("select sql is:" + sql);
                     <th>用户名 <i class="fa fa-sort"></i></th>
                     <th>昵称<i class="fa fa-sort"></i></th>
                     <th>邮箱 <i class="fa fa-sort"></i></th>
+                    <th>是否被禁<i class="fa fa-sort"></i></th>
                     <th>是否已邮箱验证<i class="fa fa-sort"></i></th>
                     <th>操作<i class="fa fa-sort"></i></th>
                   </tr>
@@ -230,12 +230,18 @@ System.out.println("select sql is:" + sql);
             </div>
           </div>
           
-          <ul>
-          	<li><a href="./userManager.jsp?pageNum=1">1</a></li>
-          	<li><a href="./userManager.jsp?pageNum=2">2</a></li>
-          	<li><a href="./userManager.jsp?pageNum=3">3</a></li>
-          	<li><a href="./userManager.jsp?pageNum=4">4</a></li>
-          </ul>
+          <div class="bs-example">
+              <ul class="pagination">
+                <li class="disabled"><a href="#">«</a></li>
+                <li class="active"><a href="userManager.jsp?pageNum=1">1</a></li>
+                <li><a href="userManager.jsp?pageNum=2">2</a></li>
+                <li><a href="userManager.jsp?pageNum=3">3</a></li>
+                <li><a href="userManager.jsp?pageNum=4">4</a></li>
+                <li><a href="userManager.jsp?pageNum=5">5</a></li>
+                <li><a href="userManager.jsp?pageNum=<%=pageNum+1%>">»</a></li>
+              </ul>             
+            </div>
+       
          
         </div><!-- /.row -->
 
