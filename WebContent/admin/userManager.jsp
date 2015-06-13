@@ -181,8 +181,8 @@
                   					%><font color="red">Î´ÑéÖ¤</font><%
                   				} %></span></td>
                   				<td>
-                  					<a href="./disableUser.jsp?username="+<%=u.getUsername() %>>·â½û</a>
-                  					<a href="./deleteUser.jsp?username="+<%=u.getUsername() %>>É¾³ý</a>
+                  					<a href="./disableUser.jsp?username=<%=u.getUsername() %>">·â½û</a>
+                  					<a href="./deleteUser.jsp?username=<%=u.getUsername() %>">É¾³ý</a>
                   				</td>
                   			</tr>
                   		<% 
