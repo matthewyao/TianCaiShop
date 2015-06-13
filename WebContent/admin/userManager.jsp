@@ -10,7 +10,8 @@
 	//获取页数
 	int pageNum = Integer.parseInt(request.getParameter("pageNum"));
 	//获取起始数
-	int startNo = ( pageNum -1 ) * pageUserNum;
+	int cursor = pageNum == 1 ? 0 : 1 ;
+	int startNo = ( pageNum - 1 ) * pageUserNum - cursor;
 	//获取用户个数
 	String numSql = "select count(*) from user";
 	int userNum = JdbcTemplate.queryForInt(numSql);
