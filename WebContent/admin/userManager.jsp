@@ -7,14 +7,22 @@
 <%@page import="com.tiancai.util.DBConnector"%>
 <%
 	int pageUserNum = Constant.USER_PAGE_SHOW_NUM;
+	//获取页数
 	int pageNum = Integer.parseInt(request.getParameter("pageNum"));
-	int lowNum = pageNum * pageUserNum;
-	int highNum = ( pageNum + 1 ) * pageUserNum -1;
+	//获取起始数
+	int startNo = ( pageNum -1 ) * pageUserNum;
 	//获取用户个数
 	String numSql = "select count(*) from user";
 	int userNum = JdbcTemplate.queryForInt(numSql);
 	//首页默认展示
-	String sql = "select * from user limit " + lowNum + "," + highNum;
+	/*
+	select sql is:select * from user limit 0,2
+select sql is:select * from user limit 3,5
+select sql is:select * from user limit 6,8
+select sql is:select * from user limit 9,11
+	*/
+	String sql = "select * from user limit " + startNo + "," + pageUserNum;
+System.out.println("select sql is:" + sql);
 	ResultSet rs = JdbcTemplate.excuteQuery(sql);
 	List<User> userList = new ArrayList<User>();
 	while(rs.next()) {
@@ -220,6 +228,13 @@
               </table>
             </div>
           </div>
+          
+          <ul>
+          	<li><a href="./userManager.jsp?pageNum=1">1</a></li>
+          	<li><a href="./userManager.jsp?pageNum=2">2</a></li>
+          	<li><a href="./userManager.jsp?pageNum=3">3</a></li>
+          	<li><a href="./userManager.jsp?pageNum=4">4</a></li>
+          </ul>
          
         </div><!-- /.row -->
 

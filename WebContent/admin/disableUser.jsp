@@ -4,7 +4,7 @@
 	int type = Integer.parseInt(request.getParameter("type"));
 	String sql = "UPDATE `user` SET disabled="+type+" WHERE username='"+username+"'";
 	JdbcTemplate.excute(sql);
-	response.sendRedirect("./userManager.jsp?pageNum=0");
+	response.sendRedirect("./userManager.jsp?pageNum=1");
 %>
 <%@ page language="java" contentType="text/html; charset=GB18030"
     pageEncoding="GB18030"%>

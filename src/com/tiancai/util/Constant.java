@@ -9,5 +9,5 @@ public class Constant {
 	public static int MATERIAL_DISPLAY_TYPE_BRAND = 2;//品牌图，首页展示
 	
 	//用户分页每页展示个数
-	public static int USER_PAGE_SHOW_NUM = 10; 
+	public static int USER_PAGE_SHOW_NUM = 3; 
 }
