@@ -1,19 +1,15 @@
 package com.tiancai.bean;
 
-public class Clothing {
-	private String clothingCode;
+public class Commodity {
+	private String commodityCode;
     private int sex;
     private String color;
     private String size;
     private int isDeleted;
     private String createTime;
     private String itemCode;
-	public String getClothingCode() {
-		return clothingCode;
-	}
-	public void setClothingCode(String clothingCode) {
-		this.clothingCode = clothingCode;
-	}
+    private int remainNum;
+
 	public int getSex() {
 		return sex;
 	}
@@ -49,6 +45,18 @@ public class Clothing {
 	}
 	public void setItemCode(String itemCode) {
 		this.itemCode = itemCode;
+	}
+	public String getCommodityCode() {
+		return commodityCode;
+	}
+	public void setCommodityCode(String commodityCode) {
+		this.commodityCode = commodityCode;
+	}
+	public int getRemainNum() {
+		return remainNum;
+	}
+	public void setRemainNum(int remainNum) {
+		this.remainNum = remainNum;
 	}
     
 	

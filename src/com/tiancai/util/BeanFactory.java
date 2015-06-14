@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.tiancai.bean.Commodity;
 import com.tiancai.bean.Item;
 
 public class BeanFactory {
@@ -69,5 +70,25 @@ public class BeanFactory {
 			System.out.println(e.getStackTrace());
 		}
 		return itemList;
+	}
+	
+	public static Commodity buildCommodity(ResultSet rs){
+		Commodity c = new Commodity();
+		try {
+			while (rs.next()) {
+				c.setColor(rs.getString("color"));
+				c.setCommodityCode(rs.getString("commodityCode"));
+				c.setCreateTime(rs.getString("createTime"));
+				c.setIsDeleted(rs.getInt("isDeleted"));
+				c.setItemCode(rs.getString("itemCode"));
+				c.setRemainNum(rs.getInt("remainNum"));
+				c.setSex(rs.getInt(rs.getInt("sex")));
+				c.setSize(rs.getString("size"));
+			}
+		} catch (SQLException e) {
+			System.out.println("<<<<<<<<<BeanFactory.buildCommodity throw SQLException,please check"+e.getMessage());
+			System.out.println(e.getStackTrace());
+		}
+		return c;
 	}
 }
