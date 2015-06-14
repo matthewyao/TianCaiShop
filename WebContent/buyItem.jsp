@@ -44,7 +44,7 @@ System.out.println(">>>>addrSql:" + addrSql);
 <title>Insert title here</title>
 </head>
 <body>
-
+	<!-- 商品信息 -->
 	<div class="row">
 	<!-- text-center //让div居中 -->
 		<div class="col-lg-8">
@@ -67,9 +67,11 @@ System.out.println(">>>>addrSql:" + addrSql);
 				</tr>
 			</table>
 		</div>
+		<!-- 选择地址 -->
 		<div class="col-lg-8">
 			<table class="table table-bordered table-hover tablesorter">
 					<tr>
+						<th>选用地址</th>
 						<th>地址ID</th>
 						<th>地址详细</th>
 						<th>是否默认</th>
@@ -79,6 +81,7 @@ System.out.println(">>>>addrSql:" + addrSql);
 					</tr>
 				<%for(Address a : addrList) { %>
 					<tr>
+						<td><input type="radio" name="chooseAddr"  value="<%=a.getAddrId() %>" /></td>
 						<td><%=a.getAddrId() %></td>
 						<td><%=a.getAddrName() %></td>
 						<td><%=a.getIsDefault() %></td>
@@ -87,6 +90,16 @@ System.out.println(">>>>addrSql:" + addrSql);
 						<td><%=a.getUsername() %></td>
 					</tr>
 				<%} %>
+			</table>
+		</div>
+		<!-- 提交 -->
+		<div class="col-lg-8">
+			<table class="table table-bordered table-hover tablesorter">
+					<tr>
+						<td>
+							<input type="submit" class="btn btn-primary btn-lg" value="购买" />
+						</td>
+					</tr>
 			</table>
 		</div>
 	</div>
