@@ -28,7 +28,7 @@ public class BeanFactory {
 				item.setPrice(rs.getDouble("price"));
 				if(isDetailPage){
 					item.setDefaultUrl(rs.getString("url"));
-					String sql = "SELECT COUNT(1) FROM clothing WHERE itemCode='" + rs.getString("itemCode")+"'";
+					String sql = "SELECT SUM(remainNum) FROM commodity WHERE itemCode='" + rs.getString("itemCode")+"'";
 					item.setInventory(JdbcTemplate.queryForInt(sql));
 					sql = "SELECT url FROM material WHERE `type`=2 AND itemCode='"+rs.getString("itemCode")+"'";
 					item.setBrandUrl(JdbcTemplate.queryForString(sql));
@@ -59,7 +59,7 @@ public class BeanFactory {
 				item.setPrice(rs.getDouble("price"));
 				if(isHomePage){
 					item.setDefaultUrl(rs.getString("url"));
-					String sql = "SELECT COUNT(1) FROM clothing WHERE itemCode='" + rs.getString("itemCode")+"'";
+					String sql = "SELECT SUM(remainNum) FROM commodity WHERE itemCode='" + rs.getString("itemCode")+"'";
 					item.setInventory(JdbcTemplate.queryForInt(sql));
 					sql = "SELECT url FROM material WHERE `type`=2 AND itemCode='"+rs.getString("itemCode")+"'";
 					item.setBrandUrl(JdbcTemplate.queryForString(sql));
