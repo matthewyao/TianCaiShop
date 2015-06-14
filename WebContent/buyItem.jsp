@@ -44,7 +44,8 @@ System.out.println(">>>>addrSql:" + addrSql);
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- 商品信息 -->
+	<form action="">
+		<!-- 商品信息 -->
 	<div class="row">
 	<!-- text-center //让div居中 -->
 		<div class="col-lg-8">
@@ -81,7 +82,7 @@ System.out.println(">>>>addrSql:" + addrSql);
 					</tr>
 				<%for(Address a : addrList) { %>
 					<tr>
-						<td><input type="radio" name="chooseAddr"  value="<%=a.getAddrId() %>" /></td>
+						<td><input type="radio" name="chooseAddr"  value="<%=a.getAddrId() %>" <% if(a.getIsDefault() == 1) {%>checked<%}%>/></td>
 						<td><%=a.getAddrId() %></td>
 						<td><%=a.getAddrName() %></td>
 						<td><%=a.getIsDefault() %></td>
@@ -97,20 +98,22 @@ System.out.println(">>>>addrSql:" + addrSql);
 			<table class="table table-bordered table-hover tablesorter">
 					<tr>
 						<td>
-							<input type="submit" class="btn btn-primary btn-lg" value="购买" />
+							<input type="submit" class="btn btn-primary btn-lg" id="btn_buyCommodity" value="购买" />
 						</td>
 					</tr>
 			</table>
 		</div>
 	</div>
+	</form>
 	
 	 <!-- JavaScript -->
     <script src="./admin/js/jquery-1.10.2.js"></script>
-    <script src="./admin/js/bootstrap.js"></script>
-
-    <!-- Page Specific Plugins -->
-    <script src="./admin/js/tablesorter/jquery.tablesorter.js"></script>
-    <script src="./admin/js/tablesorter/tables.js"></script>
 	
+	<script type="text/javascript">
+		$("#btn_buyCommodity").click(function(){
+			alert("buy buy!!!");			
+		});
+	</script>
+		
 </body>
 </html>
