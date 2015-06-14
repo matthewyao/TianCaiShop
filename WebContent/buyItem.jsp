@@ -46,7 +46,8 @@ System.out.println(">>>>addrSql:" + addrSql);
 <body>
 
 	<div class="row">
-		<div class="col-lg-12">
+	<!-- text-center //让div居中 -->
+		<div class="col-lg-8">
 			<table class="table table-bordered table-hover tablesorter">
 				<tr>
 					<th>货品编码</th>
@@ -66,8 +67,16 @@ System.out.println(">>>>addrSql:" + addrSql);
 				</tr>
 			</table>
 		</div>
-		<div class="col-lg-12">
+		<div class="col-lg-8">
 			<table class="table table-bordered table-hover tablesorter">
+					<tr>
+						<th>地址ID</th>
+						<th>地址详细</th>
+						<th>是否默认</th>
+						<th>邮编</th>
+						<th>收货人</th>
+						<th>用户名</th>
+					</tr>
 				<%for(Address a : addrList) { %>
 					<tr>
 						<td><%=a.getAddrId() %></td>
