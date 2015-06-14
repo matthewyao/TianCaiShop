@@ -252,8 +252,8 @@
 <span class="close J_Close tb-iconfont">&#223;</span>
 </div>
 <div class="tb-msg tb-hidden"><p class="tb-stop">发生错误</p></div><div class="tb-msg tb-hidden"><p class="tb-stop">请稍后重试</p></div><div id="J_juValid" class="tb-action tb-clearfix ">
-<div class="tb-btn-buy"><a href="http://item.taobao.com/item.htm?id=44788503208&ali_refid=a3_430319_1007:1103452172:N:140000024652_merchants_abcdzxyzx:ceab03e6b9ecfd20123c74854dc4ee2d&ali_trackid=1_ceab03e6b9ecfd20123c74854dc4ee2d&spm=a217f.7278617.1997506545.23.WS39MO#" data-addfastbuy="true" title="点击此按钮，到下一步确认购买信息" class="J_LinkBuy" data-spm-click="gostr=/tbdetail;locaid=d1" shortcut-key="b" shortcut-label="立即购买" shortcut-effect="click">立即购买</a></div>
-<div class="tb-btn-add"><a href="http://item.taobao.com/item.htm?id=44788503208&ali_refid=a3_430319_1007:1103452172:N:140000024652_merchants_abcdzxyzx:ceab03e6b9ecfd20123c74854dc4ee2d&ali_trackid=1_ceab03e6b9ecfd20123c74854dc4ee2d&spm=a217f.7278617.1997506545.23.WS39MO#" title="加入购物车" class="J_LinkAdd" data-spm-click="gostr=/tbdetail;locaid=d2" shortcut-key="a" shortcut-label="加入购物车" shortcut-effect="click"><i class="tb-iconfont">&#365;</i>加入购物车</a></div>
+<div class="tb-btn-buy"><a href="./buyItem.jsp?itemCode=<%=itemCode %>"  title="点击此按钮，到下一步确认购买信息" class="J_LinkBuy"  shortcut-label="立即购买" >立即购买</a></div>
+<div class="tb-btn-add"><a href="" title="加入购物车" class="J_LinkAdd" data-spm-click="gostr=/tbdetail;locaid=d2" shortcut-key="a" shortcut-label="加入购物车" shortcut-effect="click"><i class="tb-iconfont">&#365;</i>加入购物车</a></div>
 </div>
 </div>
 </div>
