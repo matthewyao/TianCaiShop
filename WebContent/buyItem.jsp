@@ -44,8 +44,7 @@ System.out.println(">>>>addrSql:" + addrSql);
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="">
-		<!-- 商品信息 -->
+	<!-- 商品信息 -->
 	<div class="row">
 	<!-- text-center //让div居中 -->
 		<div class="col-lg-8">
@@ -104,14 +103,14 @@ System.out.println(">>>>addrSql:" + addrSql);
 			</table>
 		</div>
 	</div>
-	</form>
 	
 	 <!-- JavaScript -->
     <script src="./admin/js/jquery-1.10.2.js"></script>
 	
 	<script type="text/javascript">
 		$("#btn_buyCommodity").click(function(){
-			alert("buy buy!!!");			
+			var addrId = $('input[name="chooseAddr"]:checked ').val();
+			alert(addrId);
 		});
 	</script>
 		
