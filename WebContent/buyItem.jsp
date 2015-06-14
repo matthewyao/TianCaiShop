@@ -11,21 +11,23 @@
 	String size = request.getParameter("size");
 	
 	String commodifySql = "SELECT * FROM commodity WHERE itemCode='"+itemCode+"' AND color='"+color+"' AND size='"+size+"'";
+System.out.println(">>>>commoditySql:" + commodifySql);
 	Commodity c = new Commodity();
 	ResultSet rs = JdbcTemplate.excuteQuery(commodifySql);
-	while(rs.next()){
-		c = BeanFactory.buildCommodity(rs);
+	c = BeanFactory.buildCommodity(rs);
+	//TODO:ÒªÉ¾³ý
+	String userName = "";
+	try{
+		userName = session.getAttribute("username").toString();
+	} catch (Exception e){
+		userName = "yk";
 	}
 	
-	String userName = session.getAttribute("username").toString();
-	List<Address> addrList = new ArrayList<Address>();
 	String addrSql = "SELECT * FROM tc_addr WHERE userName='"+userName+"'";
+System.out.println(">>>>addrSql:" + addrSql);
+
 	rs = JdbcTemplate.excuteQuery(addrSql);
-	while(rs.next()){
-		Address a = new Address();
-		a = BeanFactory.buildAddress(rs);
-		addrList.add(a);
-	}
+	List<Address> addrList = BeanFactory.buildAddressList(rs);
 %>
 <%@ page language="java" contentType="text/html; charset=GB18030"
     pageEncoding="GB18030"%>

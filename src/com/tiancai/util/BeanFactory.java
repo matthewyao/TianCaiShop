@@ -94,6 +94,26 @@ public class BeanFactory {
 		return c;
 	}
 	
+	//地址信息列表
+		public static List<Address> buildAddressList(ResultSet rs){
+			List<Address> addrList = new ArrayList<Address>();
+			try {
+				while (rs.next()) {
+					Address a = new Address();
+					a.setAddrId(rs.getString("addrId"));
+					a.setAddrName(rs.getString("addrName"));
+					a.setIsDefault(rs.getInt("isDefault"));
+					a.setMailNo(rs.getInt("mailNo"));
+					a.setReceiveName(rs.getString("receiveName"));
+					a.setUsername(rs.getString("username"));
+				}
+			} catch (SQLException e) {
+				System.out.println("<<<<<<<<<BeanFactory.buildAddress throw SQLException,please check"+e.getMessage());
+				System.out.println(e.getStackTrace());
+			}
+			return addrList;
+		}
+	
 	//地址信息
 	public static Address buildAddress(ResultSet rs){
 		Address a = new Address();
