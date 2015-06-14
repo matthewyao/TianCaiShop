@@ -35,8 +35,8 @@ public class BeanFactory {
 				}
 			}
 		} catch (SQLException e) {
-			System.out.println("<<<<<<<<<BeanFactory.buildItem throw SQLException,please check"+e.getMessage());
-			System.out.println(e.getStackTrace());
+			System.out.println("<<<<<<<<<BeanFactory.buildItem throw SQLException,please check! "+e.getMessage());
+			e.printStackTrace();
 		}
 		return item;
 	}
@@ -67,8 +67,8 @@ public class BeanFactory {
 				itemList.add(item);
 			}
 		} catch (SQLException e) {
-			System.out.println("<<<<<<<<<BeanFactory.buildItem throw SQLException,please check"+e.getMessage());
-			System.out.println(e.getStackTrace());
+			System.out.println("<<<<<<<<<BeanFactory.buildItem throw SQLException,please check! "+e.getMessage());
+			e.printStackTrace();
 		}
 		return itemList;
 	}
@@ -84,12 +84,12 @@ public class BeanFactory {
 				c.setIsDeleted(rs.getInt("isDeleted"));
 				c.setItemCode(rs.getString("itemCode"));
 				c.setRemainNum(rs.getInt("remainNum"));
-				c.setSex(rs.getInt(rs.getInt("sex")));
+				c.setSex(rs.getInt("sex"));
 				c.setSize(rs.getString("size"));
 			}
 		} catch (SQLException e) {
-			System.out.println("<<<<<<<<<BeanFactory.buildCommodity throw SQLException,please check"+e.getMessage());
-			System.out.println(e.getStackTrace());
+			System.out.println("<<<<<<<<<BeanFactory.buildCommodity throw SQLException,please check! "+e.getMessage());
+			e.printStackTrace();
 		}
 		return c;
 	}
@@ -106,10 +106,11 @@ public class BeanFactory {
 					a.setMailNo(rs.getInt("mailNo"));
 					a.setReceiveName(rs.getString("receiveName"));
 					a.setUsername(rs.getString("username"));
+					addrList.add(a);
 				}
 			} catch (SQLException e) {
-				System.out.println("<<<<<<<<<BeanFactory.buildAddress throw SQLException,please check"+e.getMessage());
-				System.out.println(e.getStackTrace());
+				System.out.println("<<<<<<<<<BeanFactory.buildAddressList throw SQLException,please check! "+e.getMessage());
+				e.printStackTrace();
 			}
 			return addrList;
 		}
@@ -127,8 +128,8 @@ public class BeanFactory {
 				a.setUsername(rs.getString("username"));
 			}
 		} catch (SQLException e) {
-			System.out.println("<<<<<<<<<BeanFactory.buildAddress throw SQLException,please check"+e.getMessage());
-			System.out.println(e.getStackTrace());
+			System.out.println("<<<<<<<<<BeanFactory.buildAddress throw SQLException,please check! "+e.getMessage());
+			e.printStackTrace();
 		}
 		return a;
 	}

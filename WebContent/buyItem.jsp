@@ -70,7 +70,12 @@ System.out.println(">>>>addrSql:" + addrSql);
 			<table class="table table-bordered table-hover tablesorter">
 				<%for(Address a : addrList) { %>
 					<tr>
-						<td></td>
+						<td><%=a.getAddrId() %></td>
+						<td><%=a.getAddrName() %></td>
+						<td><%=a.getIsDefault() %></td>
+						<td><%=a.getMailNo() %></td>
+						<td><%=a.getReceiveName() %></td>
+						<td><%=a.getUsername() %></td>
 					</tr>
 				<%} %>
 			</table>
