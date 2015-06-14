@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.tiancai.bean.Address;
 import com.tiancai.bean.Commodity;
 import com.tiancai.bean.Item;
 
@@ -72,6 +73,7 @@ public class BeanFactory {
 		return itemList;
 	}
 	
+	//商品信息
 	public static Commodity buildCommodity(ResultSet rs){
 		Commodity c = new Commodity();
 		try {
@@ -90,5 +92,24 @@ public class BeanFactory {
 			System.out.println(e.getStackTrace());
 		}
 		return c;
+	}
+	
+	//地址信息
+	public static Address buildAddress(ResultSet rs){
+		Address a = new Address();
+		try {
+			while (rs.next()) {
+				a.setAddrId(rs.getString("addrId"));
+				a.setAddrName(rs.getString("addrName"));
+				a.setIsDefault(rs.getInt("isDefault"));
+				a.setMailNo(rs.getInt("mailNo"));
+				a.setReceiveName(rs.getString("receiveName"));
+				a.setUsername(rs.getString("username"));
+			}
+		} catch (SQLException e) {
+			System.out.println("<<<<<<<<<BeanFactory.buildAddress throw SQLException,please check"+e.getMessage());
+			System.out.println(e.getStackTrace());
+		}
+		return a;
 	}
 }
