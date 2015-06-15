@@ -2,7 +2,7 @@ package com.tiancai.bean;
 
 public class User {
 	private String username;
-	private String nickname;
+	private String tel;
 	private String email;
 	private int valid;
 	private int disabled;
@@ -13,11 +13,11 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getNickname() {
-		return nickname;
+	public String getTel() {
+		return tel;
 	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
 	public String getEmail() {
 		return email;

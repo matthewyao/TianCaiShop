@@ -8,6 +8,7 @@ import java.util.List;
 import com.tiancai.bean.Address;
 import com.tiancai.bean.Commodity;
 import com.tiancai.bean.Item;
+import com.tiancai.bean.User;
 
 public class BeanFactory {
 	
@@ -133,4 +134,42 @@ public class BeanFactory {
 		}
 		return a;
 	}
+	
+	//地址信息列表
+	public static List<User> buildUserList(ResultSet rs){
+		List<User> userList = new ArrayList<User>();
+		try {
+			while (rs.next()) {
+				User u = new User();
+				u.setUsername(rs.getString("username"));
+				u.setEmail(rs.getString("email"));
+				u.setTel(rs.getString("tel"));
+				u.setValid(rs.getInt("valid"));
+				u.setDisabled(rs.getInt("disabled"));
+				userList.add(u);
+			}
+		} catch (SQLException e) {
+			System.out.println("<<<<<<<<<BeanFactory.buildUserList throw SQLException,please check! "+e.getMessage());
+			e.printStackTrace();
+		}
+		return userList;
+	}
+		
+		//地址信息
+		public static User buildUser(ResultSet rs){
+			User u = new User();
+			try {
+				while (rs.next()) {
+					u.setUsername(rs.getString("username"));
+					u.setEmail(rs.getString("email"));
+					u.setTel(rs.getString("tel"));
+					u.setValid(rs.getInt("valid"));
+					u.setDisabled(rs.getInt("disabled"));
+				}
+			} catch (SQLException e) {
+				System.out.println("<<<<<<<<<BeanFactory.buildUser throw SQLException,please check! "+e.getMessage());
+				e.printStackTrace();
+			}
+			return u;
+		}
 }
