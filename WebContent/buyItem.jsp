@@ -45,6 +45,7 @@ System.out.println(">>>>addrSql:" + addrSql);
 </head>
 <body>
 	<form action="./order.jsp" method="get">
+		<input type="hidden" name="itemCode" value=<%=itemCode %>/>
 		<div class="row">
 		<!-- text-center //ÈÃdiv¾ÓÖÐ -->
 			<div class="col-lg-8">
