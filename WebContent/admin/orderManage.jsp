@@ -23,7 +23,7 @@
 			" FROM tc_order o "+
 			" LEFT JOIN `user` u ON o.`username`=u.`username`"+
 			" LEFT JOIN tc_addr a ON o.`addrId`=a.`addrId`"+
-			" LEFT JOIN item i ON o.`itemCode`=i.`itemCode` limit " + startNo + "," + pageOrderNum;
+			" LEFT JOIN item i ON o.`itemCode`=i.`itemCode` order by o.orderCode desc limit " + startNo + "," + pageOrderNum ;
 System.out.println("select sql is:" + sql);
 	ResultSet rs = JdbcTemplate.excuteQuery(sql);
 	List<Order> orderList = BeanFactory.buildOrderList(rs);
@@ -122,7 +122,7 @@ System.out.println("select sql is:" + sql);
                 	<%if(i == pageNum) {%>
                 		<li class="active"><a href="orderManage.jsp?pageNum=<%=i%>">i</a></li>
                 	<%} else {%>
-                		<li><a href="orderManage.jsp?pageNum=<%=i%>">i</a></li>
+                		<li><a href="orderManage.jsp?pageNum=<%=i%>"><%=i%></a></li>
                 	<%} %>                	
                 <%} %>                        
                 <li <% if ( pageNum == totalPageNum ) { %>class="disabled" <%}%>><a href="orderManage.jsp?pageNum=<%=pageNum+1%>">»</a></li>

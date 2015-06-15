@@ -189,6 +189,7 @@ public class BeanFactory {
 				o.setPrice(rs.getDouble("price"));
 				o.setTel(rs.getString("tel"));
 				o.setUsername(rs.getString("userName"));
+				o.setReceiveName(rs.getString("receiveName"));
 				orderList.add(o);
 			}
 		} catch (SQLException e) {
@@ -212,6 +213,7 @@ public class BeanFactory {
 				o.setPrice(rs.getDouble("price"));
 				o.setTel(rs.getString("tel"));
 				o.setUsername(rs.getString("userName"));
+				o.setReceiveName(rs.getString("receiveName"));
 			}
 		} catch (SQLException e) {
 			System.out.println("<<<<<<<<<BeanFactory.buildOrder throw SQLException,please check! "+e.getMessage());
