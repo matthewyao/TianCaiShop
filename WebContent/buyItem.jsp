@@ -46,6 +46,7 @@ System.out.println(">>>>addrSql:" + addrSql);
 <body>
 	<form action="./order.jsp" method="get">
 		<input type="hidden" name="itemCode" value=<%=itemCode %>/>
+		<input type="hidden" name="userName" value=<%=userName %>/>
 		<div class="row">
 		<!-- text-center //让div居中 -->
 			<div class="col-lg-8">
@@ -99,6 +100,9 @@ System.out.println(">>>>addrSql:" + addrSql);
 						<tr>
 							<td>
 								<input type="submit" class="btn btn-primary btn-lg" id="btn_buyCommodity" value="购买" />
+							</td>
+							<td>
+								商品数量：<input type="text" name="itemNum" />
 							</td>
 						</tr>
 				</table>
