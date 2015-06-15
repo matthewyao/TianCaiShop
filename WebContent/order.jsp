@@ -6,14 +6,14 @@
 	String itemCode = request.getParameter("itemCode");
 	int itemNum = Integer.parseInt(request.getParameter("itemNum"));
 	String userName = request.getParameter("userName");
-	int addrId = Integer.parseInt(request.getParameter("chooseAddr"));
+	String addrId = request.getParameter("chooseAddr");
 	
 	String orderCode = generateOrderCode();
-	
+System.out.println(">>>>>>>>orderCode="+orderCode);
 	String orderSql = "INSERT INTO tc_order(orderCode,itemCode,itemNum,username,orderDate,addrId) "+
-			"VALUES('O2015061500001','NZ201506150001',2,'yk',NOW(),1)";
-	
-	
+			"VALUES('"+orderCode+"','"+itemCode+"',"+itemNum+",'"+userName+"',NOW(),"+addrId+")";
+System.out.println(">>>>>>>>orderSql="+orderSql);
+	JdbcTemplate.excute(orderSql);
 %>
 <%!
 	private String generateOrderCode() {
