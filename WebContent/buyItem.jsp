@@ -44,66 +44,67 @@ System.out.println(">>>>addrSql:" + addrSql);
 <title>Insert title here</title>
 </head>
 <body>
+	<form action="./order.jsp" method="get">
+		<div class="row">
+		<!-- text-center //让div居中 -->
+			<div class="col-lg-8">
+				<table class="table table-bordered table-hover tablesorter">
+					<tr>
+						<th>货品编码</th>
+						<th>商品编码</th>
+						<th>性别</th>
+						<th>大小</th>
+						<th>颜色</th>
+						<th>剩余数量</th>
+					</tr>
+					<tr>
+						<td><%=c.getItemCode() %></td>
+						<td><%=c.getCommodityCode() %></td>
+						<td><%=c.getSex() %></td>
+						<td><%=c.getSize() %></td>
+						<td><%=c.getColor() %></td>
+						<td><%=c.getRemainNum() %></td>
+					</tr>
+				</table>
+			</div>
+			<!-- 选择地址 -->
+			<div class="col-lg-8">
+				<table class="table table-bordered table-hover tablesorter">
+						<tr>
+							<th>选用地址</th>
+							<th>地址ID</th>
+							<th>地址详细</th>
+							<th>是否默认</th>
+							<th>邮编</th>
+							<th>收货人</th>
+							<th>用户名</th>
+						</tr>
+					<%for(Address a : addrList) { %>
+						<tr>
+							<td><input type="radio" name="chooseAddr"  value="<%=a.getAddrId() %>" <% if(a.getIsDefault() == 1) {%>checked<%}%>/></td>
+							<td><%=a.getAddrId() %></td>
+							<td><%=a.getAddrName() %></td>
+							<td><%=a.getIsDefault() %></td>
+							<td><%=a.getMailNo() %></td>
+							<td><%=a.getReceiveName() %></td>
+							<td><%=a.getUsername() %></td>
+						</tr>
+					<%} %>
+				</table>
+			</div>
+			<!-- 提交 -->
+			<div class="col-lg-8">
+				<table class="table table-bordered table-hover tablesorter">
+						<tr>
+							<td>
+								<input type="submit" class="btn btn-primary btn-lg" id="btn_buyCommodity" value="购买" />
+							</td>
+						</tr>
+				</table>
+			</div>
+		</div>
+	</form>
 	<!-- 商品信息 -->
-	<div class="row">
-	<!-- text-center //让div居中 -->
-		<div class="col-lg-8">
-			<table class="table table-bordered table-hover tablesorter">
-				<tr>
-					<th>货品编码</th>
-					<th>商品编码</th>
-					<th>性别</th>
-					<th>大小</th>
-					<th>颜色</th>
-					<th>剩余数量</th>
-				</tr>
-				<tr>
-					<td><%=c.getItemCode() %></td>
-					<td><%=c.getCommodityCode() %></td>
-					<td><%=c.getSex() %></td>
-					<td><%=c.getSize() %></td>
-					<td><%=c.getColor() %></td>
-					<td><%=c.getRemainNum() %></td>
-				</tr>
-			</table>
-		</div>
-		<!-- 选择地址 -->
-		<div class="col-lg-8">
-			<table class="table table-bordered table-hover tablesorter">
-					<tr>
-						<th>选用地址</th>
-						<th>地址ID</th>
-						<th>地址详细</th>
-						<th>是否默认</th>
-						<th>邮编</th>
-						<th>收货人</th>
-						<th>用户名</th>
-					</tr>
-				<%for(Address a : addrList) { %>
-					<tr>
-						<td><input type="radio" name="chooseAddr"  value="<%=a.getAddrId() %>" <% if(a.getIsDefault() == 1) {%>checked<%}%>/></td>
-						<td><%=a.getAddrId() %></td>
-						<td><%=a.getAddrName() %></td>
-						<td><%=a.getIsDefault() %></td>
-						<td><%=a.getMailNo() %></td>
-						<td><%=a.getReceiveName() %></td>
-						<td><%=a.getUsername() %></td>
-					</tr>
-				<%} %>
-			</table>
-		</div>
-		<!-- 提交 -->
-		<div class="col-lg-8">
-			<table class="table table-bordered table-hover tablesorter">
-					<tr>
-						<td>
-							<input type="submit" class="btn btn-primary btn-lg" id="btn_buyCommodity" value="购买" />
-						</td>
-					</tr>
-			</table>
-		</div>
-	</div>
-	
 	 <!-- JavaScript -->
     <script src="./admin/js/jquery-1.10.2.js"></script>
 	
