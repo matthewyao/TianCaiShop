@@ -129,9 +129,9 @@ System.out.println("select sql is:" + sql);
                 <li <% if ( pageNum == 1 ) { %>class="disabled" <%}%>><a href="userManage.jsp?pageNum=<%=pageNum - 1%>">«</a></li>
                 <%for(int i=1;i<=totalPageNum;i++){ %>
                 	<%if(i == pageNum) {%>
-                		<li class="active"><a href="userManager.jsp?pageNum=<%=i%>">i</a></li>
+                		<li class="active"><a href="userManage.jsp?pageNum=<%=i%>"><%=i%></a></li>
                 	<%} else {%>
-                		<li><a href="userManager.jsp?pageNum=<%=i%>"><%=i%></a></li>
+                		<li><a href="userManage.jsp?pageNum=<%=i%>"><%=i%></a></li>
                 	<%} %>                	
                 <%} %>                                     
                 <li <% if ( pageNum == totalPageNum ) { %>class="disabled" <%}%>><a href="userManage.jsp?pageNum=<%=pageNum+1%>">»</a></li>

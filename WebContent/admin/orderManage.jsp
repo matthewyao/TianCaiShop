@@ -120,7 +120,7 @@ System.out.println("select sql is:" + sql);
                 <!--  <li class="active"><a href="orderManage.jsp?pageNum=1">1</a></li> -->
                 <%for(int i=1;i<=totalPageNum;i++){ %>
                 	<%if(i == pageNum) {%>
-                		<li class="active"><a href="orderManage.jsp?pageNum=<%=i%>">i</a></li>
+                		<li class="active"><a href="orderManage.jsp?pageNum=<%=i%>"><%=i%></a></li>
                 	<%} else {%>
                 		<li><a href="orderManage.jsp?pageNum=<%=i%>"><%=i%></a></li>
                 	<%} %>                	
