@@ -8,6 +8,7 @@ import java.util.List;
 import com.tiancai.bean.Address;
 import com.tiancai.bean.Commodity;
 import com.tiancai.bean.Item;
+import com.tiancai.bean.Order;
 import com.tiancai.bean.User;
 
 public class BeanFactory {
@@ -135,7 +136,7 @@ public class BeanFactory {
 		return a;
 	}
 	
-	//地址信息列表
+	//用户信息列表
 	public static List<User> buildUserList(ResultSet rs){
 		List<User> userList = new ArrayList<User>();
 		try {
@@ -155,21 +156,67 @@ public class BeanFactory {
 		return userList;
 	}
 		
-		//地址信息
-		public static User buildUser(ResultSet rs){
-			User u = new User();
-			try {
-				while (rs.next()) {
-					u.setUsername(rs.getString("username"));
-					u.setEmail(rs.getString("email"));
-					u.setTel(rs.getString("tel"));
-					u.setValid(rs.getInt("valid"));
-					u.setDisabled(rs.getInt("disabled"));
-				}
-			} catch (SQLException e) {
-				System.out.println("<<<<<<<<<BeanFactory.buildUser throw SQLException,please check! "+e.getMessage());
-				e.printStackTrace();
+	//用户信息
+	public static User buildUser(ResultSet rs){
+		User u = new User();
+		try {
+			while (rs.next()) {
+				u.setUsername(rs.getString("username"));
+				u.setEmail(rs.getString("email"));
+				u.setTel(rs.getString("tel"));
+				u.setValid(rs.getInt("valid"));
+				u.setDisabled(rs.getInt("disabled"));
 			}
-			return u;
+		} catch (SQLException e) {
+			System.out.println("<<<<<<<<<BeanFactory.buildUser throw SQLException,please check! "+e.getMessage());
+			e.printStackTrace();
 		}
+		return u;
+	}
+	
+	//订单信息列表
+	public static List<Order> buildOrderList(ResultSet rs){
+		List<Order> orderList = new ArrayList<Order>();
+		try {
+			while (rs.next()) {
+				Order o = new Order();
+				o.setAddrName(rs.getString("addrName"));
+				o.setItemNum(rs.getInt("itemNum"));
+				o.setItemTitle(rs.getString("itemTitle"));
+				o.setMailNo(rs.getInt("mailNo"));
+				o.setOrderCode(rs.getString("orderCode"));
+				o.setOrderDate(rs.getString("orderDate"));
+				o.setPrice(rs.getDouble("price"));
+				o.setTel(rs.getString("tel"));
+				o.setUsername(rs.getString("userName"));
+				orderList.add(o);
+			}
+		} catch (SQLException e) {
+			System.out.println("<<<<<<<<<BeanFactory.buildOrderList throw SQLException,please check! "+e.getMessage());
+			e.printStackTrace();
+		}
+		return orderList;
+	}
+		
+	//订单信息
+	public static Order buildOrder(ResultSet rs){
+		Order o = new Order();
+		try {
+			while (rs.next()) {
+				o.setAddrName(rs.getString("addrName"));
+				o.setItemNum(rs.getInt("itemNum"));
+				o.setItemTitle(rs.getString("itemTitle"));
+				o.setMailNo(rs.getInt("mailNo"));
+				o.setOrderCode(rs.getString("orderCode"));
+				o.setOrderDate(rs.getString("orderDate"));
+				o.setPrice(rs.getDouble("price"));
+				o.setTel(rs.getString("tel"));
+				o.setUsername(rs.getString("userName"));
+			}
+		} catch (SQLException e) {
+			System.out.println("<<<<<<<<<BeanFactory.buildOrder throw SQLException,please check! "+e.getMessage());
+			e.printStackTrace();
+		}
+		return o;
+	}		
 }
