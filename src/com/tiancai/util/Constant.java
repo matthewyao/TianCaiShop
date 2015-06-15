@@ -10,4 +10,7 @@ public class Constant {
 	
 	//用户分页每页展示个数
 	public static int USER_PAGE_SHOW_NUM = 3; 
+	
+	//订单编号前缀
+	public static String ORDER_CODE_PREFIX = "O";
 }

@@ -1,3 +1,5 @@
+<%@page import="com.tiancai.util.Constant"%>
+<%@page import="com.tiancai.util.JdbcTemplate"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%
@@ -17,7 +19,27 @@
 	private String generateOrderCode() {
 		//获取yyyymmdd格式的日期字符串
 		String dateString = new SimpleDateFormat("yyyymmdd").format(new Date());
-		return "";
+		String queryMaxOrderCodeSql = "SELECT MAX(orderCode) FROM tc_order";
+		String maxOrderCode;
+		//如果订单中没有数据，则返回默认订单编号
+		try{
+			maxOrderCode = JdbcTemplate.queryForString(queryMaxOrderCodeSql);
+		} catch (Exception e){
+			return Constant.ORDER_CODE_PREFIX + dateString + "00001";
+		}
+		int maxOrderNum = Integer.parseInt(maxOrderCode.substring(maxOrderCode.length() - 5, maxOrderCode.length()));
+		String newOrderNum = String.valueOf(maxOrderNum + 1);
+		//订单编号如 : O2015061500015
+		String newOrderCode = Constant.ORDER_CODE_PREFIX + dateString + prefixOfOrderCode(5 - newOrderNum.length()) +newOrderNum;
+		return newOrderCode;
+	}
+
+	private String prefixOfOrderCode(int loop){
+		String prefixStr = "";
+		for(int i=0;i<loop;i++) {
+			prefixStr += "0";
+		}
+		return prefixStr;
 	}
 %>
 <%@ page language="java" contentType="text/html; charset=GB18030"
