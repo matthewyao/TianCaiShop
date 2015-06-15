@@ -44,9 +44,9 @@ System.out.println(">>>>addrSql:" + addrSql);
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="./order.jsp" method="get">
-		<input type="hidden" name="itemCode" value=<%=itemCode %>/>
-		<input type="hidden" name="userName" value=<%=userName %>/>
+	<form action="./order.jsp" method="post">
+		<input type="hidden" name="itemCode" value=<%=itemCode%> />
+		<input type="hidden" name="userName" value=<%=userName%> />
 		<div class="row">
 		<!-- text-center //ÈÃdiv¾ÓÖÐ -->
 			<div class="col-lg-8">
@@ -83,7 +83,7 @@ System.out.println(">>>>addrSql:" + addrSql);
 						</tr>
 					<%for(Address a : addrList) { %>
 						<tr>
-							<td><input type="radio" name="chooseAddr"  value="<%=a.getAddrId() %>" <% if(a.getIsDefault() == 1) {%>checked<%}%>/></td>
+							<td><input type="radio" name="chooseAddr"  value="<%=a.getAddrId()%>" <% if(a.getIsDefault() == 1) {%>checked<%}%>/></td>
 							<td><%=a.getAddrId() %></td>
 							<td><%=a.getAddrName() %></td>
 							<td><%=a.getIsDefault() %></td>
@@ -116,7 +116,6 @@ System.out.println(">>>>addrSql:" + addrSql);
 	<script type="text/javascript">
 		$("#btn_buyCommodity").click(function(){
 			var addrId = $('input[name="chooseAddr"]:checked ').val();
-			alert(addrId);
 		});
 	</script>
 		

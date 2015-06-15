@@ -11,14 +11,14 @@
 	String orderCode = generateOrderCode();
 System.out.println(">>>>>>>>orderCode="+orderCode);
 	String orderSql = "INSERT INTO tc_order(orderCode,itemCode,itemNum,username,orderDate,addrId) "+
-			"VALUES('"+orderCode+"','"+itemCode+"',"+itemNum+",'"+userName+"',NOW(),"+addrId+")";
+			"VALUES('"+orderCode+"','"+itemCode+"',"+itemNum+",'"+userName+"',NOW(),'"+addrId+"')";
 System.out.println(">>>>>>>>orderSql="+orderSql);
 	JdbcTemplate.excute(orderSql);
 %>
 <%!
 	private String generateOrderCode() {
-		//获取yyyymmdd格式的日期字符串
-		String dateString = new SimpleDateFormat("yyyymmdd").format(new Date());
+		//获取yyyyMMdd格式的日期字符串
+		String dateString = new SimpleDateFormat("yyyyMMdd").format(new Date());
 		String queryMaxOrderCodeSql = "SELECT MAX(orderCode) FROM tc_order";
 		String maxOrderCode;
 		//如果订单中没有数据，则返回默认订单编号
