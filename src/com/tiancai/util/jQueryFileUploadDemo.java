@@ -49,9 +49,11 @@ public class jQueryFileUploadDemo extends HttpServlet {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		
 		String dirDate = sdf.format(new Date());
-		String dir = "./upload/" + dirDate;//按日期生成存放目录
+		String dir = "/WebContent/upload/" + dirDate;//按日期生成存放目录
+		String savePath = "D:\\Java Workspace\\LearningWorkspace\\TianCaiShop" + dir;
+		/*因为savePath是eclipse的目录的缘故
 		String savePath = this.getServletConfig().getServletContext()
-				.getRealPath(dir);
+				.getRealPath(dir);*/
 		File f1 = new File(savePath);
 		if (!f1.exists()) {
 			f1.mkdirs();
