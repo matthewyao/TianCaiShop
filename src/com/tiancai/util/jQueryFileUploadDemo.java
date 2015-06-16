@@ -124,13 +124,14 @@ public class jQueryFileUploadDemo extends HttpServlet {
     					"error": "Filetype not allowed"
     				   另外，files必须为一个JSON数组，哪怕上传的是一个文件
 				 */
+				//TODO:需要修改图片地址
 				JSONArray ja = new JSONArray();
 				JSONObject json = new JSONObject();
 				json.put("name", fileName);
 				json.put("size", 321656);
-				json.put("url", "http://localhost:9096/upload/" + dirDate + "/" + saveFile.getName());
-				json.put("thumbnailUrl", "http://localhost:9096/upload/" + dirDate + "/" + "thumbnail/" + saveFile.getName());
-				json.put("deleteUrl", "http://localhost:9096/upload/" + dirDate + "/" + saveFile.getName());
+				json.put("url", "http://localhost:8888/TianCaiShop/upload/" + dirDate + "/" + saveFile.getName());
+				json.put("thumbnailUrl", "http://localhost:8888/TianCaiShop/upload/" + dirDate + "/" + "thumbnail/" + saveFile.getName());
+				json.put("deleteUrl", "http://localhost:8888/TianCaiShop/upload/" + dirDate + "/" + saveFile.getName());
 				json.put("deleteType", "DELETE");
 				ja.add(json);
 				JSONObject js = new JSONObject();
