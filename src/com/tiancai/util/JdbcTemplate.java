@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 
 public class JdbcTemplate {
 	

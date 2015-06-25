@@ -10,6 +10,7 @@
 </head>
 <body>
 	<%
+
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String sql = "select username from user where username='" + username + "' and password='" + password + "'";

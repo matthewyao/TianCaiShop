@@ -22,7 +22,7 @@
 		String checkSql = "select username from user where username='" + tel +"'";
 		String user = JdbcTemplate.queryForString(checkSql); 
 		if( (user.equals("") || user == null) ){
-			String sql = "INSERT INTO `tiancai`.`user`(`username`,`password`,`nickname`,`email`) " +
+			String sql = "INSERT INTO `tiancai`.`user`(`username`,`password`,`tel`,`email`) " +
 					"VALUES ('"+tel+"','"+pass+"','"+tel+"','"+mail+"')";
 			JdbcTemplate.excute(sql);
 			System.out.println(">>>>>>>>>>start to send mail to :"+mail + " At " + new Date().toString() );
