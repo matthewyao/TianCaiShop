@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a08b953-4540-4fe5-af2f-fbaeb8ac89c3" name="Default" comment="" />
+    <list default="true" id="7a08b953-4540-4fe5-af2f-fbaeb8ac89c3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="TianCaiShop.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -209,12 +211,12 @@
       <option name="number" value="Default" />
       <updated>1435243559937</updated>
       <workItem from="1435243561626" duration="81000" />
-      <workItem from="1435243798490" duration="711000" />
+      <workItem from="1435243798490" duration="2140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="792000" />
+    <option name="totallyTimeSpent" value="2221000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
